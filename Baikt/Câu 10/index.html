@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        async function getData() {
+            api = await fetch('https://6767c148560fbd14f18e4f65.mockapi.io/hocsinh')
+            data = await api.json()
+            console.log(data)
+        }
+
+        <!-- getData(); -->
+
+        async function myName() {
+            api1 = await fetch('https://6767c148560fbd14f18e4f65.mockapi.io/hocsinh')
+            data1 = await api1.json()
+            const Name = data1.filter((item) => {
+                return item.id == 6;
+
+            })
+            console.log(Name)
+        }
+        myName();
+    </script>
+</body>
+
+</html>
