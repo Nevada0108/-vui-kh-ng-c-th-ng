@@ -1,28 +1,27 @@
     // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-import {
-    getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,
-    sendEmailVerification, signOut, onAuthStateChanged
-}
-    from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
-
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyCNOAnAd3eilEIz88EZYLwRQmQi2gIYpp0",
-  authDomain: "spck-jsi-d16b4.firebaseapp.com",
-  databaseURL: "https://spck-jsi-d16b4-default-rtdb.firebaseio.com",
-  projectId: "spck-jsi-d16b4",
-  storageBucket: "spck-jsi-d16b4.firebasestorage.app",
-  messagingSenderId: "942812593050",
-  appId: "1:942812593050:web:7188325f7c08b9aedfd823"
-};
+    import { initializeApp } from "firebase/app";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+    import {
+        getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,
+        sendEmailVerification, signOut, onAuthStateChanged
+    }
+        from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
+    
+    
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCNOAnAd3eilEIz88EZYLwRQmQi2gIYpp0",
+      authDomain: "spck-jsi-d16b4.firebaseapp.com",
+      databaseURL: "https://spck-jsi-d16b4-default-rtdb.firebaseio.com",
+      projectId: "spck-jsi-d16b4",
+      storageBucket: "spck-jsi-d16b4.firebasestorage.app",
+      messagingSenderId: "942812593050",
+      appId: "1:942812593050:web:7188325f7c08b9aedfd823"
+    };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
 
 const auth = getAuth(app);
 
@@ -72,7 +71,7 @@ export const initLogin = () => {
 
             // Đăng nhập thành công, chuyển hướng sau 1 giây
             showMessage(elements.succsess, 'Đăng nhập thành công', false);
-            setTimeout(() => window.location.href = 'index.html', 1000);
+            setTimeout(() => window.location.href = 'dashboard.html', 1000);
         } catch (error) {
             console.log(error)
             handleError(error, elements.error);
@@ -124,6 +123,7 @@ export const initRegister = () => {
                     'Đã đăng ký thành công! Vui lòng kiểm tra email xác nhận',
                     false
                 )
+                setTimeout(() => window.location.href = 'login.html', 1000);
 
             } catch (error) {
                     handleError(error, elements.error);
